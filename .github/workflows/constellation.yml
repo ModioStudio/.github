@@ -9,7 +9,7 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install -y graphviz jq
       - env: 
           ORG: ModioStudio
-          GH_TOKEN: ${{ secrets.ORG_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           # fetch repos + topics
           DATA=$(gh api -H "X-GitHub-Api-Version: 2022-11-28" /orgs/$ORG/repos --paginate)

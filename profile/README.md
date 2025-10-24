@@ -1,44 +1,31 @@
-## Welcome to the team 🙌
 
-### Working Docker Compose
+<div align="center">
+  <img height="250" src="../docs/assets/logo.svg" />
+</div>
 
-```YAML
-version: '3.8'
+<h1 align="center">✦ Modio Studio ✦</h1>
 
-services:
-  frontend:
-    image: ghcr.io/modiolabs/auth-frontend:latest
-    container_name: auth-frontend
-    ports:
-      - "80:80"
-    depends_on:
-      - backend
-    environment:
-      - NODE_ENV=production
-    networks:
-      - app-network
-  backend:
-    image: ghcr.io/modiolabs/auth-backend:latest
-    container_name: auth-backend
-    ports:
-      - "8080:8080"
-    networks:
-      - app-network
-    depends_on:
-      - postgres
-  postgres:
-    image: 'postgres:latest'
-    container_name: auth-postgres
-    environment:
-      - 'POSTGRES_DB=authdb'
-      - 'POSTGRES_PASSWORD=secret'
-      - 'POSTGRES_USER=authadmin'
-    ports:
-      - '5432'
-    networks:
-      - app-network
+###
 
-networks:
-  app-network:
-    driver: bridge
-```
+<div align="center">
+  <img src="https://img.shields.io/badge/dynamic/json?label=Repos&query=%24.public_repos&url=https%3A%2F%2Fapi.github.com%2Forgs%2FModioStudio&logo=github&color=blue&cacheSeconds=3600" style="margin:0 6px;vertical-align:middle;" />
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=ModioStudio&left_text=Visitors" style="margin:0 6px;vertical-align:middle;" />
+  <img src="https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/GITHUB_USER_HERE/GIST_ID_HERE/raw/org-stars.json&logo=github&label=Stars&color=yellow&cacheSeconds=3600" style="margin:0 6px;vertical-align:middle;" />
+</div>
+
+###
+
+<h3 align="center">
+<br>✦Modern, modular, in motion—open, scalable systems✦
+</h3>
+
+<h4 align="center">
+<br>✦Open by default. Scalable by design✦
+<br>✦Design + engineering, unified✦
+</h4>
+
+
+<div align="center">
+  <img src="./metrics.svg" height="150" alt="ModioStudio org stats" style="vertical-align:middle;margin:0 6px;" />
+</div>
+

@@ -1,0 +1,28 @@
+name: Org Constellation
+on: {schedule: [{cron: "0 6 * * *"}], workflow_dispatch: {}}
+permissions: {contents: write}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y graphviz jq
+      - env: 
+          ORG: ModioStudio
+          GH_TOKEN: ${{ secrets.ORG_TOKEN }}
+        run: |
+          # fetch repos + topics
+          DATA=$(gh api -H "X-GitHub-Api-Version: 2022-11-28" /orgs/$ORG/repos --paginate)
+          echo "digraph G { rankdir=LR; node [shape=box,fontsize=10];" > profile/constellation.dot
+          echo "$DATA" | jq -r '.[]|[.name, (.topics//[])]|@json' | while read -r row; do
+            REPO=$(echo "$row" | jq -r '.[0]'); 
+            echo "  \"$REPO\";" >> profile/constellation.dot
+            echo "$row" | jq -r '.[1][]' | while read -r t; do
+              echo "  \"$t\" [shape=ellipse,fontsize=9];" >> profile/constellation.dot
+              echo "  \"$REPO\" -> \"$t\";" >> profile/constellation.dot
+            done
+          done
+          echo "}" >> profile/constellation.dot
+          dot -Tsvg profile/constellation.dot -o profile/constellation.svg
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with: {commit_message: "chore: update constellation", file_pattern: "profile/constellation.*"}

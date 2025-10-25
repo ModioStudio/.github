@@ -6,12 +6,18 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          filename: metrics.svg
+          filename: profile/metrics.svg
           token: ${{ secrets.METRICS_TOKEN }} # fine-grained: read:org, read:public_repo
           user: ModioStudio
           template: classic
           base: header, repositories
           config_timezone: Europe/Berlin
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update org metrics"
+          file_pattern: "profile/metrics.svg"

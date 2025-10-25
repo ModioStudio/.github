@@ -10,7 +10,7 @@
 <div align="center">
   <img src="https://img.shields.io/badge/dynamic/json?label=Repos&query=%24.public_repos&url=https%3A%2F%2Fapi.github.com%2Forgs%2FModioStudio&logo=github&color=blue&cacheSeconds=3600" style="margin:0 6px;vertical-align:middle;" />
   <img src="https://visitor-badge.laobi.icu/badge?page_id=ModioStudio&left_text=Visitors" style="margin:0 6px;vertical-align:middle;" />
-  <img src="https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/GITHUB_USER_HERE/GIST_ID_HERE/raw/org-stars.json&logo=github&label=Stars&color=yellow&cacheSeconds=3600" style="margin:0 6px;vertical-align:middle;" />
+  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/ModioStudio/.github/main/profile/org-stars.json&logo=github&label=Stars&color=yellow&cacheSeconds=3600" style="margin:0 6px;vertical-align:middle;" />
 </div>
 
 ###

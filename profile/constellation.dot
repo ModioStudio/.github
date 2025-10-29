@@ -1,4 +1,19 @@
 digraph G { rankdir=LR; node [shape=box,fontsize=10];
   "modio-maintenance";
   ".github";
+  "MiniFy";
+  "beatiful-ui" [shape=ellipse,fontsize=9];
+  "MiniFy" -> "beatiful-ui";
+  "nextjs" [shape=ellipse,fontsize=9];
+  "MiniFy" -> "nextjs";
+  "shadcn-ui" [shape=ellipse,fontsize=9];
+  "MiniFy" -> "shadcn-ui";
+  "spotify" [shape=ellipse,fontsize=9];
+  "MiniFy" -> "spotify";
+  "spotify-api" [shape=ellipse,fontsize=9];
+  "MiniFy" -> "spotify-api";
+  "spotify-mini-player" [shape=ellipse,fontsize=9];
+  "MiniFy" -> "spotify-mini-player";
+  "tauri" [shape=ellipse,fontsize=9];
+  "MiniFy" -> "tauri";
 }

@@ -1,5 +1,16 @@
 name: Org Constellation
-on: {schedule: [{cron: "0 6 * * *"}], workflow_dispatch: {}}
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: Select which image to build
+        required: true
+        default: run
+        type: choice
+        options:
+          - run
+          - run2
+
 permissions: {contents: write}
 jobs:
   build:

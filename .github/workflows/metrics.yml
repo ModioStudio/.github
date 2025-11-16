@@ -1,8 +1,16 @@
 # .github/workflows/metrics.yml
 name: Org Metrics
 on:
-  schedule: [{cron: "0 */12 * * *"}]
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      target:
+        description: Select which image to build
+        required: true
+        default: run
+        type: choice
+        options:
+          - run
+          - run2
 jobs:
   build:
     runs-on: ubuntu-latest

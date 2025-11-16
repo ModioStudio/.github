@@ -1,9 +1,15 @@
 name: org-stars-badge
 on:
-  workflow_dispatch: {}
-  schedule:
-    - cron: "0 */6 * * *"  # every 6h
-
+  workflow_dispatch:
+    inputs:
+      target:
+        description: Select which image to build
+        required: true
+        default: run
+        type: choice
+        options:
+          - run
+          - run2
 jobs:
   build:
     runs-on: ubuntu-latest

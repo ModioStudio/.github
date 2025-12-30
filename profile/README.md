@@ -24,8 +24,3 @@
 <br>✦Design + engineering, unified✦
 </h4>
 
-
-<div align="center">
-  <img src="./metrics.svg" height="150" alt="ModioStudio org stats" style="vertical-align:middle;margin:0 6px;" />
-</div>
-
